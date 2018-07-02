@@ -10,7 +10,7 @@ public class MysqlDao implements Idao {
 
 
    public MysqlDao(){
-       conn = new MysqlManager().getConnection();
+       conn = new ConnManager().getConnection();
        try {
            getAllWords();
        } catch (SQLException e) {

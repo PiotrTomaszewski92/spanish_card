@@ -17,13 +17,12 @@ public class Controller {
 
     @FXML
     public void initialize(){
-        textField.setText(person.getName());
-        labelName.setText(person.getName());
+        textField.textProperty().bindBidirectional(person.propertyTextFieldProperty());
+        labelName.textProperty().bind(person.propertyTextFieldProperty());
     }
 
     @FXML
     public void write(){
-        labelName.setText(textField.getText());
-        person.setName(textField.getText());
+
     }
 }

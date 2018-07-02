@@ -1,13 +1,21 @@
 package sample;
 
-public class Person {
-    private String name = "John";
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
-    public String getName() {
-        return name;
+public class Person {
+
+    private StringProperty propertyTextField = new SimpleStringProperty(this, "nameProperty", "John Snow");
+
+    public String getPropertyTextField() {
+        return propertyTextField.get();
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public StringProperty propertyTextFieldProperty() {
+        return propertyTextField;
+    }
+
+    public void setPropertyTextField(String propertyTextField) {
+        this.propertyTextField.set(propertyTextField);
     }
 }
